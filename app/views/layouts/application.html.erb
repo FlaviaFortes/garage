@@ -23,7 +23,39 @@
 
   <body>
 
-  <h1>TESTE</h1>
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Garage", root_path %></h1>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="divider"></li>
+          <li class="has-dropdown">
+            <a href="#">Explore</a>
+            <ul class="dropdown">
+              <li><a href="#">Recents</a></li>
+              <li><a href="#">Most Loved</a></li>
+              <li><a href="#">Random Awesomeness</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Sign Up</a></li>
+        </ul>
+      </section>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="#">Sign In</a></li>
+          <li><a href="#">*barrinha de busca*</a></li>
+        </ul>
+      </section>
+    </nav>
+
     <%= yield %>
 
 
