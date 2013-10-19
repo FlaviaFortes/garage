@@ -91,4 +91,32 @@ describe ArtistsController do
       end
     end
   end
+
+   describe "GET 'show'" do
+
+    context "with a valid param" do
+      let!(:artist) { create(:artist) }
+
+      before do
+        get :show, id: artist
+      end
+
+      it { should respond_with(:success) }
+      it { should render_template(:show) }
+      it { should render_with_layout(:application) }
+
+      it "should assign post" do
+        expect(assigns(:artist)).to eq(artist)
+      end
+    end
+
+    context "with an invalid param" do
+
+      it "should raise error" do
+        expect do
+          get :show, id: 'wrong'
+        end.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+  end
 end
