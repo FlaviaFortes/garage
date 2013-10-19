@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+  before_filter :set_artist, only: [:edit, :update]
 
   def index
     @artists = Artist.all
@@ -10,7 +11,6 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
-    # binding.pry
     if @artist.save
       redirect_to artists_path, notice: "Nice! You're ready to Rock!"
     else
@@ -23,6 +23,17 @@ class ArtistsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @artist.update_attributes(artist_params)
+      redirect_to artists_path, notice: "Nice! You're ready to Rock!"
+    else
+      render 'edit'
+    end
+  end
+
+  def set_artist
     @artist = Artist.find(params[:id])
   end
 

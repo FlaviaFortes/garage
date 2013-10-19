@@ -135,4 +135,66 @@ describe ArtistsController do
       expect(assigns(:artist)).to eq(artist)
     end
   end
+
+  describe "PUT 'update'" do
+
+    context "with valid params" do
+      let!(:artist) { create(:artist) }
+
+      let(:params) do
+        {
+          id: artist,
+          artist:  attributes_for(:artist, name: "T Swizzle", description: "Now I'm a rapper! Yo!")
+        }
+      end
+
+      it "update the artist" do
+        expect do
+          patch :update, params
+        end.to change{ artist.reload.name }.from("Taylor Swift").to("T Swizzle")
+      end
+
+      it "assign correct @artist" do
+        patch :update, params
+        expect(assigns(:artist)).to eq(artist)
+      end
+
+      it "redirect to artists_path" do
+        patch :update, params
+        should redirect_to(artists_path)
+      end
+
+      xit "set the flash correctly" do
+        patch :update, params
+        should set_the_flash[:notice].to("Nice! You're ready to Rock!")
+      end
+    end
+
+    context "with invalid params" do
+      let!(:artist) { create(:artist) }
+
+      let(:params) do
+        {
+          id: artist,
+          artist:  attributes_for(:artist, name: "")
+        }
+      end
+
+      it "does not update the artist" do
+        expect do
+          patch :update, params
+        end.to_not change{ artist.name }
+      end
+
+      it "assign correct @artist" do
+        patch :update, params
+        expect(assigns(:artist)).to eq(artist)
+      end
+
+      it "re-render the 'edit' template" do
+        patch :update, params
+        should render_template("edit")
+      end
+    end
+  end
 end
