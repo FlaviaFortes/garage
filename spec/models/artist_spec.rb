@@ -33,4 +33,9 @@ describe Artist do
                       rejecting('text/plain', 'text/xml') }
     end
   end
+
+  describe "associations" do
+
+    it { should have_many(:photos).dependent(:destroy) }
+  end  
 end
