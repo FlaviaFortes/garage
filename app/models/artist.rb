@@ -11,4 +11,5 @@ class Artist < ActiveRecord::Base
 
    has_many :photos, dependent: :destroy
    has_many :videos, dependent: :destroy
+   has_many :audios, dependent: :destroy
 end

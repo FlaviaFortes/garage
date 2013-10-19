@@ -37,5 +37,6 @@ describe Artist do
 
     it { should have_many(:photos).dependent(:destroy) }
     it { should have_many(:videos).dependent(:destroy) }
+    it { should have_many(:audios).dependent(:destroy) }
   end
 end
