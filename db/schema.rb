@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019164901) do
+ActiveRecord::Schema.define(version: 20131019200023) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20131019164901) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  create_table "audios", force: true do |t|
+    t.string   "url"
+    t.integer  "artist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "audios", ["artist_id"], name: "index_audios_on_artist_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.text     "description"
