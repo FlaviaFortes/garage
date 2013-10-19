@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :artist do
     name "Taylor Swift"
-    description "She is a princess!"
+    description "I'm a beatiful princess and I love do sing about love!"
     email "taylorswift@gmail.com"
 
     before :create do |artist|
