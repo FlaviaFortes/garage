@@ -39,4 +39,11 @@ describe Artist do
     it { should have_many(:videos).dependent(:destroy) }
     it { should have_many(:audios).dependent(:destroy) }
   end
+
+  describe "nested attributes" do
+
+    [:photos, :videos, :audios].each do |attr|
+      it { should accept_nested_attributes_for(attr) }
+    end
+  end
 end
