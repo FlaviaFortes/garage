@@ -57,4 +57,4 @@ production:
   database: rumble_production
   pool: 5
   username: rumble
-  password:
+  password: horaextra13
