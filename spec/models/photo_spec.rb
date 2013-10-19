@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe Photo do
 
-  describe "associations" do
-    it { should belong_to(:artist) }
-  end  
-
   describe "paperclip" do
 
     describe "image" do
@@ -16,5 +12,9 @@ describe Photo do
                       allowing('image/png', 'image/gif', 'image/jpg').
                       rejecting('text/plain', 'text/xml') }
     end
+  end
+
+  describe "associations" do
+    it { should belong_to(:artist) }
   end
 end
