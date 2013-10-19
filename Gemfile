@@ -9,6 +9,7 @@ gem 'uglifier',             '2.2.1'
 gem 'coffee-rails',         '4.0.1'
 gem 'jquery-rails',         '3.0.4'
 gem 'paperclip',            '3.5.1'
+gem 'aws-sdk',              '~> 1.5.7' # required by paperclip
 
 group :development do
   gem 'better_errors',      '1.0.1'
