@@ -25,5 +25,6 @@ production:
   encoding: unicode
   database: rumble_production
   pool: 5
+  host: localhost
   username: rumble
   password: horaextra13
