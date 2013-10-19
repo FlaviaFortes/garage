@@ -10,5 +10,5 @@ class Artist < ActiveRecord::Base
   validates_attachment :avatar, presence: true, content_type: { content_type: %r{image/*} }
 
    has_many :photos, dependent: :destroy
-   has_many :photos, dependent: :destroy
+   has_many :videos, dependent: :destroy
 end
