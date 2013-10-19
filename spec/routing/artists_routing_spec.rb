@@ -16,6 +16,9 @@ describe ArtistsController do
     it "routes to #show" do
       expect(get("/artists/1")).to route_to("artists#show", id: "1")
     end
+    it "routes to #edit" do
+      expect(get("/artists/1/edit")).to route_to("artists#edit", :id => "1")
+    end
   end
 
   describe "route helpers" do
@@ -31,6 +34,9 @@ describe ArtistsController do
     end
     it "artist_path" do
       expect(artist_path(1)).to eq("/artists/1")
+    end
+    it "edit_artist_path" do
+      expect(edit_artist_path(1)).to eq("/artists/1/edit")
     end
   end
 end
