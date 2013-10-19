@@ -13,6 +13,9 @@ describe ArtistsController do
     it "routes to #create" do
       expect(post("/artists")).to route_to("artists#create")
     end
+    it "routes to #show" do
+      expect(get("/artists/1")).to route_to("artists#show", id: "1")
+    end
   end
 
   describe "route helpers" do
@@ -25,6 +28,9 @@ describe ArtistsController do
     end
     it "artists_path" do
       expect(artists_path).to eq("/artists")
+    end
+    it "artist_path" do
+      expect(artist_path(1)).to eq("/artists/1")
     end
   end
 end
