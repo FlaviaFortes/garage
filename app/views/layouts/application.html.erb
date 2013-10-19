@@ -14,10 +14,12 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Garage | Where the band meets" %></title>
 
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= stylesheet_link_tag    "application" %>
+  	<%= stylesheet_link_tag    "google-search" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
+  	<%= javascript_include_tag "google-search" %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -51,7 +53,16 @@
       <section class="top-bar-section">
         <ul class="right">
           <li><a href="#">Sign In</a></li>
-          <li><a href="#">*barrinha de busca*</a></li>
+          <li>
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input type="text" placeholder="Search"></input>
+              </div>
+              <div class="small-2 columns">
+                <a href="#" class="button prefix">Search</a>
+              </div>
+            </div>
+          </li>
         </ul>
       </section>
     </nav>
