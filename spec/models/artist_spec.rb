@@ -37,5 +37,6 @@ describe Artist do
   describe "associations" do
 
     it { should have_many(:photos).dependent(:destroy) }
-  end  
+    it { should have_many(:videos).dependent(:destroy) }
+  end
 end
