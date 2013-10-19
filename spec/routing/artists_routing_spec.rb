@@ -19,6 +19,9 @@ describe ArtistsController do
     it "routes to #edit" do
       expect(get("/artists/1/edit")).to route_to("artists#edit", :id => "1")
     end
+    it "routes to #update" do
+      expect(patch("/artists/1")).to route_to("artists#update", :id => "1")
+    end
   end
 
   describe "route helpers" do
