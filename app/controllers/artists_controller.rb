@@ -12,7 +12,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
     # binding.pry
     if @artist.save
-      redirect_to artists_path, notice: "Perfil criado com sucesso! Seja bem-vindo ao Garage!"
+      redirect_to artists_path, notice: "Nice! You're ready to Rock!"
     else
       render 'new'
     end
@@ -20,6 +20,10 @@ class ArtistsController < ApplicationController
 
   def show
    @artist = Artist.find(params[:id])
+  end
+
+  def edit
+    @artist = Artist.find(params[:id])
   end
 
  private

@@ -64,7 +64,7 @@ describe ArtistsController do
 
       it "set the flash correctly" do
         post :create, params
-        should set_the_flash[:notice].to(/sucesso/)
+        should set_the_flash[:notice].to("Nice! You're ready to Rock!")
       end
     end
 
@@ -105,18 +105,34 @@ describe ArtistsController do
       it { should render_template(:show) }
       it { should render_with_layout(:application) }
 
-      it "should assign post" do
+      it "assign artist" do
         expect(assigns(:artist)).to eq(artist)
       end
     end
 
     context "with an invalid param" do
 
-      it "should raise error" do
+      it "raise error" do
         expect do
           get :show, id: 'wrong'
         end.to raise_error(ActiveRecord::RecordNotFound)
       end
+    end
+  end
+
+  describe "GET 'edit'" do
+    let!(:artist) { create(:artist) }
+
+    before do
+      get :edit, id: artist
+    end
+
+    it { should respond_with(:success) }
+    it { should render_template(:edit) }
+    it { should render_with_layout(:application) }
+
+    it "assign artist" do
+      expect(assigns(:artist)).to eq(artist)
     end
   end
 end
