@@ -10,4 +10,12 @@ describe Artist do
 
     it {should validate_uniqueness_of(:email) }  
   end
+
+  describe "Paperclip" do
+
+    describe "avatar" do
+
+      it { should have_attached_file(:avatar) }
+    end
+  end
 end
