@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019060140) do
+ActiveRecord::Schema.define(version: 20131019164901) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -40,5 +40,14 @@ ActiveRecord::Schema.define(version: 20131019060140) do
   end
 
   add_index "photos", ["artist_id"], name: "index_photos_on_artist_id", using: :btree
+
+  create_table "videos", force: true do |t|
+    t.string   "url"
+    t.integer  "artist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "videos", ["artist_id"], name: "index_videos_on_artist_id", using: :btree
 
 end
