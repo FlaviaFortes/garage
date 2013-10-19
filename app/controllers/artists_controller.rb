@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_filter :set_artist, only: [:edit, :update]
+  before_filter :set_artist, only: [:edit, :update, :destroy]
 
   def index
     @artists = Artist.all
@@ -31,6 +31,11 @@ class ArtistsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @artist.destroy
+    redirect_to artists_path, notice: "Goodbye :("
   end
 
   def set_artist

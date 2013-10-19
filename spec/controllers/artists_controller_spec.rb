@@ -197,4 +197,36 @@ describe ArtistsController do
       end
     end
   end
+
+  describe "DELETE 'destroy'" do
+    let!(:artist) { create(:artist) }
+
+    context "with a valid param" do
+
+      it "destroy the artist" do
+        expect do
+          delete :destroy, id: artist
+        end.to change(Artist, :count).by(-1)
+      end
+
+      it "redirect to artist_path" do
+        delete :destroy, id: artist
+        should redirect_to(artists_path)
+      end
+
+      it "set the flash correctly" do
+        delete :destroy, id: artist
+        should set_the_flash[:notice].to("Goodbye :(")
+      end
+    end
+
+    context "with an invalid param" do
+
+      it "raise error" do
+        expect do
+          delete :destroy, id: 'wrong'
+        end.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+  end
 end
