@@ -22,6 +22,9 @@ describe ArtistsController do
     it "routes to #update" do
       expect(patch("/artists/1")).to route_to("artists#update", :id => "1")
     end
+    it "routes to #destroy" do
+      expect(delete("/artists/1")).to route_to("artists#destroy", :id => "1")
+    end
   end
 
   describe "route helpers" do
