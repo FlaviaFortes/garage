@@ -17,3 +17,13 @@
 
 <% end %>
 
+<br />
+<br/>
+
+<% if @artist.youtube_playlist.present? %>
+
+  <iframe width="560" height="315" src="//<%= @artist.youtube_playlist%>" frameborder="0" allowfullscreen></iframe>
+
+<% end %>
+
+<%= render "contact" %>
