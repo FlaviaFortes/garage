@@ -8,9 +8,22 @@
   </div>
 </div>
 
+<% if flash[:notice] %>
+  <div class="row content-top-margin">
+    <div class="small-10 small-centered columns">
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
 <div class="row content-top-margin">
   <div class="small-10 small-centered columns">
     <ul class="small-block-grid-4">
+
+      <%= render 'panel'%>
 
       <li class="full-size">
         <div class="image-panel">
@@ -120,13 +133,6 @@
         </div>
       </li>
     </ul>
-
-    <div class="row">
-      <div class="small-4 small-centered columns">
-        <a href="#" class="button tiny radius pagination-button right">Newer</a>
-        <a href="#" class="button tiny radius pagination-button left">Older</a>
-      </div>
-    </div>
 
   </div>
 </div>
