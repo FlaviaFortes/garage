@@ -18,6 +18,10 @@
     <div class="profile-description-container">
       <p class="description"><%= @artist.description %></p>
     </div>
+    <div>
+      <%= link_to "Edit", edit_artist_path(@artist)%>
+      <%= link_to "Remove", @artist, :confirm => "Are you sure?", :method => :delete %>
+    </div>
     <div class="wuffo">
       <%= render "contact" %>
     </div>
