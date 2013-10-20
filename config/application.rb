@@ -13,9 +13,6 @@ Bundler.require(:default, Rails.env)
 
 module Rumble
   class Application < Rails::Application
-
-    config.paperclip_default = { path: ":rails_root/public/:url",
-        url: "images/:class/:id/:style/:filename" }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
