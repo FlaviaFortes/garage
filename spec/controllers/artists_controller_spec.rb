@@ -28,7 +28,7 @@ describe ArtistsController do
     it { should render_template(:new) }
     it { should render_with_layout(:application) }
 
-    it "should assign a new post" do
+    it "assign a new artist" do
       expect(assigns(:artist)).to be_a_new(Artist)
     end
   end
