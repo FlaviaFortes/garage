@@ -1,7 +1,9 @@
 class Artist < ActiveRecord::Base
 
   has_attached_file :avatar,
-                    :styles => { :medium => "920x327#", :thumb => "180x180#" }
+                    :styles => { :medium => "920x327#", :thumb => "180x180#" },
+                    url: ":class/:id/:style/:filename",
+                    path: ":rails_root/public/:url"
 
   validates :name, :description, :email, presence: true
   validates :email, uniqueness: true
