@@ -9,7 +9,7 @@ class Artist < ActiveRecord::Base
   validates :email, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
   validates_attachment :avatar, content_type: { content_type: %r{image/*} }
 
-   has_many :photos, dependent: :destroy
-   has_many :videos, dependent: :destroy
-   has_many :audios, dependent: :destroy
+  has_many :photos, dependent: :destroy
+  has_many :videos, dependent: :destroy
+  has_many :audios, dependent: :destroy
 end
