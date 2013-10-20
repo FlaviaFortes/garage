@@ -77,6 +77,10 @@ after 'deploy:update_code' do
 
   # Compile Assets
   run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+
+  # Migrations
+  run "cd #{release_path}; RAILS_ENV=production bundle exec rake db:setup"
+  run "cd #{release_path}; RAILS_ENV=production bundle exec rake db:migrate"
 end
 
 # Restart Passenger
