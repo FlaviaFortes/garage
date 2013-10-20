@@ -26,6 +26,7 @@ class ArtistsController < ApplicationController
   end
 
   def update
+    @artist = Artist.find(params[:id])
     if @artist.update_attributes(artist_params)
       redirect_to artist_path(@artist), notice: "Nice! You're ready to Rock!"
     else
@@ -44,6 +45,6 @@ class ArtistsController < ApplicationController
 
  private
     def artist_params
-      params.require(:artist).permit(:name, :email, :description, :site, :avatar, :soundcloud_playlist)
+      params.require(:artist).permit(:name, :email, :description, :site, :avatar, :soundcloud_playlist, :youtube_playlist)
     end
 end
