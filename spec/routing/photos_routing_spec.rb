@@ -9,6 +9,9 @@ describe ArtistsController do
     it "routes to #new" do
       expect(get("/artists/1/photos/new")).to route_to("photos#new", artist_id: "1")
     end
+    it "routes to #create" do
+      expect(post("/artists/1/photos")).to route_to("photos#create", artist_id: "1")
+    end
   end
 
   describe "route helpers" do
