@@ -17,9 +17,8 @@
   	<title><%= content_for?(:title) ? yield(:title) : "Garage | Where the band meets" %></title>
 
     <%= stylesheet_link_tag    "application" %>
-  	<%= stylesheet_link_tag    "google-search" %>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
-  	<%= javascript_include_tag "google-search" %>
+    <%= javascript_include_tag "google" %>
     <%= csrf_meta_tags %>
   </head>
 
