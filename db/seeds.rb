@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+artist = Artist.first_or_initialize(name: "Metallica") do |a|
+  a.email = "metallica@garage.com"
+  a.description = "We're an awesome band!"
+  a.avatar_file_name = "assets/metallica.jpg"
+  a.save!
+end
