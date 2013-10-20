@@ -125,3 +125,46 @@ body {
 .notice {
   text-align: center;
 }
+
+
+.profile-stage {
+  margin-bottom: 40px;
+}
+
+.profile-left {
+  background-color: #fff;
+}
+
+.profile-right {
+}
+
+.profile-avatar-container {
+  min-height: auto;
+  min-width: 100%;
+  padding: 15px 0 0 0;
+  background-color: #fff;
+}
+
+.profile-name-container {
+  border-bottom: 1px dashed #ddd;
+  color: #666;
+
+  .name {
+    font-size: 10px;
+    margin: 0 0 -5px 0;
+
+    strong {
+      color: #333;
+      font-size: 26px;
+    }
+  }
+}
+
+.profile-description-container {
+    // border-bottom: 1px dashed #ddd;
+
+  .description {
+    margin: 20px 0;
+    font-size: 12px;
+  }
+}

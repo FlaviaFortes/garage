@@ -7,6 +7,25 @@
   </script>
 <% end %>
 
+<div class="row content-top-margin profile-stage">
+  <div class="small-5 columns profile-left">
+    <div class="profile-avatar-container">
+      <%= image_tag @artist.avatar.url, class: "profile-avatar" %>
+    </div>
+    <div class="profile-name-container">
+      <p class="name"><strong><%= @artist.name %></strong> @since <%= @artist.created_at.strftime("%d/%m/%Y - %H:%M") %></p>
+    </div>
+    <div class="profile-description-container">
+      <p class="description"><%= @artist.description %></p>
+    </div>
+  </div>
+  <div class="small-7 columns profile-right bg-color">
+    <div class="">
+      <%= image_tag @artist.avatar.url, class: "profile-avatar", style: "visibility: hidden" %>
+    </div>
+  </div>
+</div>
+
 <% if @artist.soundcloud_playlist.present? %>
 
   <object height="81" width="100%" id="myPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
