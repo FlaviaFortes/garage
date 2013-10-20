@@ -199,3 +199,16 @@ body {
   padding: 0;
   width: 100%;
 }
+
+.red {
+  background-color: #f70e0e;
+
+  &:hover {
+    background-color: #d12323;
+  }
+}
+
+.profile-buttons {
+  text-align: right;
+  margin: 10px 0;
+}

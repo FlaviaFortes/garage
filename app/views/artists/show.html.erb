@@ -18,9 +18,12 @@
     <div class="profile-description-container">
       <p class="description"><%= @artist.description %></p>
     </div>
-    <div>
-      <%= link_to "Edit", edit_artist_path(@artist)%>
-      <%= link_to "Remove", @artist, :confirm => "Are you sure?", :method => :delete %>
+    <div class="row">
+      <div class="small-12 small-centered columns profile-buttons">
+        <%= link_to "Edit", edit_artist_path(@artist), class: "button tiny" %>
+        <%= link_to "Remove", @artist, class: "button tiny red",:confirm => "Are you sure?", :method => :delete %>
+
+      </div>
     </div>
     <div class="wuffo">
       <%= render "contact" %>
