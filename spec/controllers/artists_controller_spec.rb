@@ -159,9 +159,9 @@ describe ArtistsController do
         expect(assigns(:artist)).to eq(artist)
       end
 
-      it "redirect to artists_path" do
+      it "redirect to artist_path" do
         patch :update, params
-        should redirect_to(artists_path)
+        should redirect_to(artist_path(artist))
       end
 
       xit "set the flash correctly" do

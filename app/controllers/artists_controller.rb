@@ -27,7 +27,7 @@ class ArtistsController < ApplicationController
 
   def update
     if @artist.update_attributes(artist_params)
-      redirect_to artists_path, notice: "Nice! You're ready to Rock!"
+      redirect_to artist_path(@artist), notice: "Nice! You're ready to Rock!"
     else
       render 'edit'
     end
@@ -44,6 +44,6 @@ class ArtistsController < ApplicationController
 
  private
     def artist_params
-      params.require(:artist).permit(:name, :email, :description, :site, :avatar)
+      params.require(:artist).permit(:name, :email, :description, :site, :avatar, :soundcloud_playlist)
     end
 end
