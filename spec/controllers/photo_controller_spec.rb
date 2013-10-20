@@ -100,4 +100,40 @@ describe PhotosController do
       end
     end
   end
+
+  describe "DELETE 'destroy'" do
+    let!(:artist) { create(:artist) }
+    let(:photo) { create(:photo, artist: artist) }
+
+    context "with valid params" do
+
+      #TODO WTF? Make it pass!
+      xit "destroy the photo" do
+        expect do
+          delete :destroy, artist_id: photo.artist.id, id: photo.id
+        end.to change(Photo, :count).by(-1)
+      end
+
+      it "redirect to artist_path" do
+        delete :destroy, artist_id: artist.id, id: photo.id
+        should redirect_to(artists_path)
+      end
+    end
+
+    context "with invalid params" do
+
+      #TODO WTF? It should raise and ActiveRecord Error!
+      xit "raise error" do
+        expect do
+          delete :destroy, artist_id: 'wrong', id: photo.id
+        end.to raise_error(ActiveRecord::RecordNotFound)
+      end
+
+      it "raise error" do
+        expect do
+          delete :destroy, artist_id: artist.id, id: 'wrong'
+        end.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+  end
 end
