@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020174852) do
+ActiveRecord::Schema.define(version: 20131020192042) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20131020174852) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "soundcloud_playlist"
+    t.string   "youtube_playlist"
   end
 
   create_table "audios", force: true do |t|
