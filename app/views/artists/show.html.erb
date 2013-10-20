@@ -18,31 +18,22 @@
     <div class="profile-description-container">
       <p class="description"><%= @artist.description %></p>
     </div>
+    <div class="wuffo">
+      <%= render "contact" %>
+    </div>
   </div>
   <div class="small-7 columns profile-right bg-color">
-    <div class="">
-      <%= image_tag @artist.avatar.url, class: "profile-avatar", style: "visibility: hidden" %>
+    <div class="soundcloud">
+      <p>Soundcloud Playlist</p>
+      <% if @artist.soundcloud_playlist.present? %>
+        <%= render 'soundcloud' %>
+      <% end %>
+    </div>
+    <div class="youtube">
+      <p>Youtube Playlist</p>
+      <% if @artist.youtube_playlist.present? %>
+        <iframe src="//<%= @artist.youtube_playlist%>" frameborder="0" allowfullscreen class="flex_video"></iframe>
+      <% end %>
     </div>
   </div>
 </div>
-
-<% if @artist.soundcloud_playlist.present? %>
-
-  <object height="81" width="100%" id="myPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-    <param name="movie" value="http://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/2708514&enable_api=true&object_id=myPlayer"></param>
-    <param name="allowscriptaccess" value="always"></param>
-    <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=https%3A//<%= @artist.soundcloud_playlist %>&enable_api=true&object_id=myPlayer" type="application/x-shockwave-flash" width="100%" name="myPlayer"></embed>
-  </object>
-
-<% end %>
-
-<br />
-<br/>
-
-<% if @artist.youtube_playlist.present? %>
-
-  <iframe width="560" height="315" src="//<%= @artist.youtube_playlist%>" frameborder="0" allowfullscreen></iframe>
-
-<% end %>
-
-<%= render "contact" %>

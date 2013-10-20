@@ -146,6 +146,7 @@ body {
 }
 
 .profile-name-container {
+  min-height: 100%;
   border-bottom: 1px dashed #ddd;
   color: #666;
 
@@ -161,10 +162,40 @@ body {
 }
 
 .profile-description-container {
-    // border-bottom: 1px dashed #ddd;
+  min-height: 100%;
 
   .description {
     margin: 20px 0;
     font-size: 12px;
   }
+}
+
+.soundcloud {
+  min-width: 100%;
+  margin: 0 0 10px 0;
+  padding: 0 10px 10px 10px;
+  background-color: #fff;
+
+  p {
+    padding: 5px 0 0 0;
+  }
+}
+
+.youtube {
+  min-width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+  padding: 0 10px 10px 10px;
+  background-color: #fff;
+
+  iframe {
+    min-width: 100%;
+    min-height: 50%;
+  }
+}
+
+.wuffo {
+  margin: 0 0 15px 0;
+  padding: 0;
+  width: 100%;
 }
