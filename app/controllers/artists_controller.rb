@@ -12,7 +12,7 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
-      redirect_to artists_path, notice: "Nice! You're ready to Rock!"
+      redirect_to artist_path(@artist), notice: "Nice! You're ready to Rock!"
     else
       render 'new'
     end
