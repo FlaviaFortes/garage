@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <script type="text/javascript" src="scripts/soundcloud.player.api.js"></script>
+  <script type="text/javascript">
+       soundcloud.addEventListener('onPlayerReady', function(player, data) {
+         player.api_play();
+       });
+  </script>
+<% end %>
+
+<% if @artist.soundcloud_playlist.present? %>
+
+  <object height="81" width="100%" id="myPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+    <param name="movie" value="http://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/2708514&enable_api=true&object_id=myPlayer"></param>
+    <param name="allowscriptaccess" value="always"></param>
+    <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=https%3A//<%= @artist.soundcloud_playlist %>&enable_api=true&object_id=myPlayer" type="application/x-shockwave-flash" width="100%" name="myPlayer"></embed>
+  </object>
+
+<% end %>
+
