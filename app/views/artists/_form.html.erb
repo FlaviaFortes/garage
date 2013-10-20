@@ -1,11 +1,24 @@
+<!--<script type="text/javascript">
+  $('input[id=lefile]').change(function() {
+  $('#photoCover').val($(this).val());
+  });
+</script>-->
 <%= form_for @artist, :url => artists_path, :html => { :multipart => true } do |f| %>
-  <label> What's your screen name? </label>
-  <%= f.text_field :name %>
-  <label> Let us know what is your email for future contatcs. Who knows, right? ;) </label>
-  <%= f.text_field :email %>
-  <label> We would really like to know more about your music! :) Tell us about your work and preferences: </label>
-  <%= f.text_field :description %>
-  <label> Almost done! Pick a nice picture for your profile: </label>
-  <%= f.file_field :avatar %>
-  <%= f.submit "Let's go!" %>
+    <div class="row">
+      <div class="small-6 small-centered columns">
+        <fieldset>
+          <legend class="bg-color">Tell us about yourself</legend>
+
+          <%= f.text_field :name, placeholder: "Name. That one you use up on stage." %>
+          <%= f.text_field :email, placeholder: "Email. Because people may want to hire you!" %>
+          <%= f.text_area :description, placeholder: "Talk about yoursef. All the things you think is important to let people know upfront.", class: "non-resiseable" %>
+
+          <div>
+            <%= f.file_field :avatar, placeholder: "Choose you avatar!", class: "hidden-input" %>
+          </div>
+
+          <%= f.submit "Let's go!", class: "button large expand" %>
+        </fieldset>
+      </div>
+    </div>
 <% end %>

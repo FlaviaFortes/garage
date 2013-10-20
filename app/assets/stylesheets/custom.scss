@@ -79,8 +79,6 @@ body {
   font-size: 12px;
   color: #999;
   text-align: center;
-  // display: table;
-  // margin: 10px auto 0 auto;
 }
 
 .footer-text {
@@ -101,7 +99,6 @@ body {
   z-index: 1;
 
   p {
-
     color: #444;
     padding: 10px 0 0 0;
     font-size: 18px;
@@ -111,4 +108,16 @@ body {
       color: #000;
     }
   }
+}
+
+.non-resiseable {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.hidden-input {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
 }
